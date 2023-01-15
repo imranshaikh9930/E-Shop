@@ -1,7 +1,8 @@
 import { useContext } from "react";
 import { ShopContext } from "../../Context/State_Context";
 import  ClearIcon  from "@mui/icons-material/Clear"
-import "./Cart.css";
+// import "./Cart.css";
+import "../../App.css";
 
 function Product(props) {
   const { id, productName, price, productImage } = props.data

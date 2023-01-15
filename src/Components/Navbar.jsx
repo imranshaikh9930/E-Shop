@@ -1,5 +1,6 @@
 import React from 'react';
-import"../Components/Navbar.css";
+// import"../Components/Navbar.css";
+import "../App.css";
 import {Link} from "react-router-dom";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart"
 
