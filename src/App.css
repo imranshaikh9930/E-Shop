@@ -1,6 +1,6 @@
 /* Navbar */
 .navbar {
-   height: 60px; 
+    height: 60px; 
     display: flex;
     align-items: center;
     background-color: #131921;
@@ -81,7 +81,9 @@
 .product img {
   width: 18rem;
 }
-
+.addToCartBttn{
+  margin: 5px;
+}
 .product .description {
   text-align: center;
 }
@@ -135,6 +137,7 @@
   font-size: 30px;
 }
 
+
 .countHandler input {
   width: 40px;
   text-align: center;
@@ -150,6 +153,7 @@
   border-radius: 8px;
   margin: 10px;
   cursor: pointer;
+ 
 }
 .removebtn{
     position: relative;
@@ -157,4 +161,19 @@
     right: 2rem;
     border-radius: 10px;
     cursor: pointer;
+}
+
+@media screen and(max-width:600px) {
+  .navbar{
+     height : 5rem; 
+    display : flex;
+    align-items: center;
+    background-color: #131921;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+  }
+ 
+  
 }
