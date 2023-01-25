@@ -17,9 +17,9 @@ function Cart() {
         <h1>Your Cart Items</h1>
       </div>
       <div className="cartItems">
-        {PRODUCTS.map((product) => {
+        {PRODUCTS.map((product,id) => {
           if (cartItem[product.id] !== 0) {
-            return <CartItem data={product} />
+            return <CartItem key={id} data={product} />
           
           }
         })}

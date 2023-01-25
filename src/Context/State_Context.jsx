@@ -15,10 +15,28 @@ const getDefaultCart = () => {
 
 
 export const ShopContextProvider = (props) => {
+    const [searchItem, setSearchItem] = useState("");
+
+    /* Pagination */
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postPerPage, setPostPerPage] = useState(10);
     const [cartItem, setCartItem] = useState(getDefaultCart);
+
+    const lastPost_Index = currentPage * postPerPage;
+    const firstPost_Index = lastPost_Index - postPerPage;
+
+    const currentPost = PRODUCTS.slice(firstPost_Index, lastPost_Index);
+    
+    let page  = [];
+
+    for(let i = 1; i <= Math.ceil(PRODUCTS.length / postPerPage);i++){
+        page.push(i);
+    }
+   
     
     const addToCart = (itemId) => {
       setCartItem((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }))
+      
     }
 
     const removeCartItem = (itemId) => {
@@ -42,6 +60,12 @@ export const ShopContextProvider = (props) => {
       addToCart,
       removeCartItem,
       getTotalCartAmount,
+      currentPost,
+      page,
+      setCurrentPage,
+        currentPage,
+        searchItem,
+        setSearchItem,
     }
     return (
         <ShopContext.Provider value={ContextValue} >
